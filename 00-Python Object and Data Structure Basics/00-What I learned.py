@@ -32,7 +32,7 @@ print("I am {}".format(age))
 print("My name is {name} and I am {age} years old".format(age = 22, name = "Thomas"))
 #to write a float number with a lot of deciamls you can specify the width and precision using: .format(value:width.precision f), width specifies the length of the
 #formated strings, but basically it just leads to more or less white space before the string. Width takes into account the length of the string
-#so if you write egg and quality with the same width parameter there will be less white space
+#so if you write egg and quality with the same width parameter there will be less white space. precision is decimals
 d = 22.3648449875934
 print("this {number:.3f} is a large number".format(number=d))
 #you can also format tables like this:
@@ -60,3 +60,51 @@ print(len(my_list))
 #length will give back the number of items in the list. Nested lists count as one
 my_list = ['A string',[23,100.232],'o']
 print(len(my_list))
+
+#Lists can be expanded/multiplied just like strings, either with + or *
+#to add an item permanently to a list you could either
+my_list=my_list+["permanent item 1"] #or
+my_list.append("permanent item 2")
+print(my_list)
+
+#to remove an object use pop function, specify the index, default is last item
+my_list.pop(4)
+print(my_list)
+
+#you can also sort (alphabetically, or with numbers ascending) and reverse a list, this is changes original list directly
+#my_list.sort() this doesn't work because list has different types of items, only works with pure int or pure str lists
+#print(my_list)
+alpha_list = ["b", "d", "la", "g"]
+alpha_list.sort()
+print(alpha_list)
+
+#nesting lists, you can nest lists and with [][] you can call on an item inside a nested list like this:
+my_list2 = [1,2,3,4,5]
+#if you don't want them nested
+matrix = my_list+my_list
+print(matrix)
+#nested format:
+matrix = [my_list, my_list2]
+print(matrix)
+#call on specific items by stacking the brackets:
+print(matrix[0][1][1])
+
+#######
+#Dictionaries
+#######
+#Unlike sequences (like lists or strings), dictionaries are mappings, which means that the objects in a dictionary
+#are stored by a key and not their position in the sequence. dictionary consists of key and value assigned to it
+
+my_dict = {"Mike": {"age":22, "gender":"male", "height":1.90}, "Sara": {"age":23, "gender":"non-binary", "height":1.63}}
+print(my_dict["Mike"]["height"])
+print(f'{my_dict["Mike"]["height"]:.2f}') #for some reason I can't use them same quotation marks for the f function
+#and the keys. Maybe because f is a function
+#add keys and values (similar to r where you make a new variable)
+my_dict["Thomas"] = "male"
+print(my_dict)
+
+#dictionary functions
+print(my_dict.keys())
+print(my_dict.values())
+print(my_dict.items())#this creates tuples from the key and value pairs
+
