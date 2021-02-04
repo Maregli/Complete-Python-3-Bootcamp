@@ -30,6 +30,7 @@ age = 22
 name = "Michael"
 print("I am {}".format(age))
 print("My name is {name} and I am {age} years old".format(age = 22, name = "Thomas"))
+
 #to write a float number with a lot of deciamls you can specify the width and precision using: .format(value:width.precision f), width specifies the length of the
 #formated strings, but basically it just leads to more or less white space before the string. Width takes into account the length of the string
 #so if you write egg and quality with the same width parameter there will be less white space. precision is decimals
@@ -107,4 +108,61 @@ print(my_dict)
 print(my_dict.keys())
 print(my_dict.values())
 print(my_dict.items())#this creates tuples from the key and value pairs
+
+#######
+#Tupples
+#######
+#kinda like Lists (can mix objects), but immutable. Use for things of which order mustn't be changed
+#tuples are created with ()
+t = (1,2,3, "shelf")
+print(len(t))
+print(t[-1])
+print(t.count(2))
+#use.index to type in a value and get back the index
+print(t.index("shelf"))
+#you can neither add to tupples, nor change their values. They are immutable!!
+
+########
+#Sets
+######
+#sets are an unordered collection of UNIQUE Elements
+x = set()
+#instead of using append like in lists, we use add to add stuff
+x.add("Gucci")
+x.add("Prada")
+print(x)
+#you cannot add a value to a set, if it is already in the set:
+x.add("Prada")
+print(x)
+#to extract unique values of a list, you can create a set based on the list:
+lyst_trial = [1,2,1,1,1,2,3,4,2,2,1,2,3,5]
+print(set(lyst_trial))
+
+#######
+#Booleans
+#######
+#basically these are True/False Vectors
+#there is also placeholder object none
+
+#######
+#Files
+######
+# These operators to specify open function so that you can write/read document/text file
+# "r"   Opens a file for reading only.
+# "r+"  Opens a file for both reading and writing.
+# "rb"  Opens a file for reading only in binary format.
+# "rb+" Opens a file for both reading and writing in binary format.
+# "w"   Opens a file for writing only.
+# "a"   Open for writing.  The file is created if it does not exist.
+# "a+"  Open for reading and writing.  The file is created if it does not exist.
+import os
+print(os.getcwd())
+dir_path = os.path.dirname(os.path.realpath("test1.txt"))
+print(dir_path)
+# file = open("test1.txt", "a+")
+# file.write("This is the first line\nthis is the second line")
+# file.close()
+# file = open("test1.txt", "r")
+# print(file.read())
+
 
