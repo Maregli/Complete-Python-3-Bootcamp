@@ -155,6 +155,7 @@ print(set(lyst_trial))
 # "w"   Opens a file for writing only.
 # "a"   Open for writing.  The file is created if it does not exist.
 # "a+"  Open for reading and writing.  The file is created if it does not exist.
+#don't know if these + shortcuts really work that well
 import os
 print(os.getcwd())
 dir_path = os.path.dirname(os.path.realpath("test1.txt"))
@@ -164,5 +165,33 @@ print(dir_path)
 # file.close()
 # file = open("test1.txt", "r")
 # print(file.read())
+
+#to specify location
+myfile = open("C:\\Users\\marc_\\OneDrive Uzh\\OneDrive - uzh.ch\\Udemy\\GitHub_Python_Bootcamp\\00-Python Object and Data Structure Basics\\test.txt")
+#I would suggest you use \\ instead of \, because it can't read it properly
+
+#read files:
+myfile.read()
+print(myfile.read())#!if you read the file before, it can't be read again just like that, because the cursour
+#is at the end of the file, it will return an empty string
+myfile.seek(0) #this resets the cursor at line  1, so you can read it again
+print(myfile.read())#now you can print the file again
+
+#you can also use read lines, to get a list of every line as one object in the list:
+myfile.seek(0)
+print(myfile.readlines())
+myfile.close()
+
+#adding lines
+myfile = open('C:\\Users\\marc_\\OneDrive Uzh\\OneDrive - uzh.ch\\Udemy\\GitHub_Python_Bootcamp\\00-Python Object and Data Structure Basics\\test.txt', 'a+')
+#myfile.write("\nthis is being apppended to my file using the a+ function when opening the file")
+myfile.seek(0)
+print(myfile.read())
+myfile.close()
+
+
+
+
+
 
 

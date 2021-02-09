@@ -1,3 +1,6 @@
 First Line
 Second Line
 now the file has more content
+
+this is being apppended to my file using the a+ function when opening the file
+this is being apppended to my file using the a+ function when opening the file
