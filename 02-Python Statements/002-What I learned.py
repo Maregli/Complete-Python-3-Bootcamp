@@ -59,5 +59,63 @@ print(list(d.keys()))
 #but you can sort them now since they're a list
 print(list(d.values()))
 
+#########
+#While Loops
+#########
 
+#exectues the loop as long as condition at beginning is TRUE.
+#break: ends the loop if condition is true
+#continue: starts the loop all over again (so does not execute whatever is under the continue statement
+#pass, does nothing. but if you write a function/Loop but don't have it finished yet you can add it as placeholder and get no error
+x = 0
+while x <= 10:
+    print(x, end= " -> ")
+    print(x, "is smaller than 10")
+    if x == 9:
+        print("I'm breaking because this gets tedious")
+        break
+    else:
+        print("continuing...")
+        x+=1
 
+########
+#Useful Operators
+########
+
+#range: creates a list of integers up to but excluding a cert. value. you can also specify steps. range(start, stop, step)
+print(list(range(2,11,2))) #needed the list function because of print function
+
+#enumerate: creates tuples, indexes the content in formula with numbers. you can use this for loops. !index before object in tupple
+print(list(enumerate("abcde")))
+for (i, letter) in enumerate("abcde"):
+    print(f'At index {i} the letter is {letter}')
+
+#zip: creates a list of tupples from two ore more lists
+lis1 = list(range(10))
+lis2 = ["a","b","c","d","e","f","g","h","i"]
+print(len(lis2))
+tup = zip(lis1, lis2)
+print(list(tup))
+for item1,item2 in zip(lis1,lis2):
+    print(f'This object "{item1}" is from lis1, this object "{item2}" is from lis2')
+
+#in: to check if an object is in a list. returns true/false
+print(2 in lis2)
+#you can also do not in
+print(2 not in lis2)
+
+#min/max: to find minimum and maximum of a list
+print(min(lis1))
+
+#random functions: shuffle, reshuffels an existing list
+print(lis1)
+from random import shuffle
+shuffle(lis1)
+print(lis1)
+
+#randit: returns a random integer in a range including edges
+from random import randint
+print(randint(0,100))
+
+#input: you can then input something in code
+input("Put your name here: ")
