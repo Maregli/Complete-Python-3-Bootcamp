@@ -118,4 +118,36 @@ from random import randint
 print(randint(0,100))
 
 #input: you can then input something in code
-input("Put your name here: ")
+#input("Put your name here: ")
+
+#######
+#List comprehension
+#######
+
+#is basically a for loop in one line, resulting in a list
+word = "abcdefg"
+lst = [x for x in word]
+print(lst) #so for every iteration it creates a list item, based on the specified rules in the loop
+
+lst = [x**2 for x in range(11)]
+print(lst)
+
+#with if statements, for example exponential with only odd numbers
+lst = [x**2 for x in range(11) if (x%2) !=0]
+print(lst)
+
+#you can also work with another list or nest loops
+celsius = [0, 13.5, 25, 180]
+fahrenheit = [((9/5)*temp + 32) for temp in celsius]
+print(fahrenheit)
+
+lst = [x**2 for x in [x**2 for x in range(11)]]
+print(lst)
+
+#Test
+st = 'Print only the words that start with s in this sentence'
+lys = st.split()
+print(lys)
+for s in st:
+    if  s == "s":
+        print(s)
