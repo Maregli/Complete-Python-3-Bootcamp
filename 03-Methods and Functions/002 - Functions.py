@@ -26,4 +26,7 @@ def greeting(name):
     print(f'hello {name}')
 greeting("Thomas")
 
-#testint if github still works after I've moved files
+#return function: returns the result of a function, which then can be stored as a new variable
+#this does not automatically print result, simply returns it
+#The return keyword allows you to actually save the result of the output of a function as a variable. The print() function
+#simply displays the output to you, but doesn't save it for future use. Let's explore this in more detail
